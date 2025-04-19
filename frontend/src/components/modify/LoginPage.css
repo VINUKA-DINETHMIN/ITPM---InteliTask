@@ -1,0 +1,187 @@
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.error-message {
+  color: #e74c3c;
+  background: #fceae9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: #f9f9f9;
+}
+
+input:focus {
+  border-color: #6e8efb;
+  box-shadow: 0 0 5px rgba(110, 142, 251, 0.3);
+  outline: none;
+}
+
+input.invalid {
+  border-color: #e74c3c;
+}
+
+.validation-message {
+  color: #e74c3c;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+}
+
+.login-btn {
+  background: #6e8efb;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: #5a75e0;
+  transform: translateY(-2px);
+}
+
+.login-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.additional-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.create-account-btn,
+.admin-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.create-account-btn {
+  background: #28a745;
+  color: white;
+}
+
+.create-account-btn:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+.admin-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.admin-btn:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-card {
+      padding: 20px;
+      margin: 10px;
+  }
+
+  h2 {
+      font-size: 1.5rem;
+  }
+
+  .subtitle {
+      font-size: 0.9rem;
+  }
+
+  input,
+  .login-btn,
+  .create-account-btn,
+  .admin-btn {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .login-card {
+      padding: 15px;
+  }
+
+  input {
+      padding: 10px;
+  }
+}
