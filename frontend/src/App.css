@@ -1,0 +1,393 @@
+/* Reset Body Styles */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* General App Container */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  text-align: center;
+}
+
+/* Splash Screen */
+.splash-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.splash-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1505236850776-63a179e84e89?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'); /* Clock-themed background */
+  background-size: cover;
+  background-position: center;
+  animation: bgZoomIn 4s ease-in-out 1 forwards;
+  z-index: -2; /* Adjusted to be behind clouds */
+  pointer-events: none;
+}
+
+.splash-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  background-size: cover;
+  background-position: top;
+  transform: scale(2);
+  animation: bgZoomOut 4s ease-in-out 1 forwards;
+  z-index: -2; /* Adjusted to be behind clouds */
+  pointer-events: none;
+}
+
+/* Floating Clouds */
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  z-index: -1; /* Behind clock and title */
+  animation: floatClouds linear infinite;
+}
+
+.cloud-1 {
+  width: 100px;
+  height: 60px;
+  top: 20%;
+  left: -150px;
+  animation-duration: 8s;
+}
+
+.cloud-2 {
+  width: 80px;
+  height: 50px;
+  top: 50%;
+  left: -150px;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.cloud-3 {
+  width: 120px;
+  height: 70px;
+  top: 70%;
+  left: -150px;
+  animation-duration: 12s;
+  animation-delay: 1s;
+}
+
+@keyframes floatClouds {
+  0% {
+    transform: translateX(-150px);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0.6;
+  }
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Clock Animation */
+.clock {
+  z-index: 1;
+}
+
+.clock-hand {
+  transform-origin: 50% 50%;
+}
+
+.hour-hand {
+  animation: tickHour 14400s linear infinite;
+}
+
+.minute-hand {
+  animation: tickMinute 240s linear infinite;
+}
+
+.second-hand {
+  animation: tickSecond 4s linear infinite;
+}
+
+@keyframes tickHour {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tickMinute {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tickSecond {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Title Animation */
+.title-svg {
+  z-index: 1;
+}
+
+.title-text {
+  font-size: 40px;
+  font-weight: 700;
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 0.5;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: textAnimation 4s ease-in-out 1 forwards;
+}
+
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 200;
+    fill: transparent;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #fff;
+  }
+}
+
+.splash-subtitle {
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.5s ease-in;
+}
+
+/* Background Animations */
+@keyframes bgZoomIn {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes bgZoomOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
+  }
+}
+
+/* Header */
+.app-header {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content */
+.app-main {
+  padding: 40px 20px;
+}
+
+/* Task List Page */
+.task-list-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+/* Button Colors */
+.profile-btn {
+  background: linear-gradient(45deg, #4caf50, #388e3c);
+}
+
+.profile-btn:hover {
+  background: linear-gradient(45deg, #388e3c, #2e7d32);
+  transform: translateY(-2px);
+}
+
+.reminders-btn {
+  background: linear-gradient(45deg, #0288d1, #0277bd);
+}
+
+.reminders-btn:hover {
+  background: linear-gradient(45deg, #0277bd, #01579b);
+  transform: translateY(-2px);
+}
+
+.feedback-btn {
+  background: linear-gradient(45deg, #f57c00, #ef6c00);
+}
+
+.feedback-btn:hover {
+  background: linear-gradient(45deg, #ef6c00, #e65100);
+  transform: translateY(-2px);
+}
+
+.favourites-btn {
+  background: linear-gradient(45deg, #d81b60, #c2185b);
+}
+
+.favourites-btn:hover {
+  background: linear-gradient(45deg, #c2185b, #ad1457);
+  transform: translateY(-2px);
+}
+
+.logout-btn {
+  background: linear-gradient(45deg, #d32f2f, #c62828);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(45deg, #c62828, #b71c1c);
+  transform: translateY(-2px);
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title-text {
+    font-size: 30px;
+  }
+
+  .clock {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cloud-1 {
+    width: 80px;
+    height: 50px;
+  }
+
+  .cloud-2 {
+    width: 60px;
+    height: 40px;
+  }
+
+  .cloud-3 {
+    width: 100px;
+    height: 60px;
+  }
+
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .nav-btn {
+    width: 100%;
+    max-width: 200px;
+    margin: 5px auto;
+  }
+
+  .app-main {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-text {
+    font-size: 24px;
+  }
+
+  .clock {
+    width: 120px;
+    height: 120px;
+  }
+
+  .cloud-1 {
+    width: 60px;
+    height: 40px;
+  }
+
+  .cloud-2 {
+    width: 50px;
+    height: 30px;
+  }
+
+  .cloud-3 {
+    width: 80px;
+    height: 50px;
+  }
+
+  .splash-subtitle {
+    font-size: 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+}
