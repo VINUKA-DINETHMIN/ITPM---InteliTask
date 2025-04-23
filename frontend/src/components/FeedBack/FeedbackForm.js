@@ -125,6 +125,7 @@ const Feedback = () => {
 
     const handleFeedbackSubmitted = () => setFeedbackUpdated(prev => !prev);
 
+    //Exporting feedback as PDF
     const generatePDF = () => {
         const doc = new jsPDF();
         const tableColumn = ["User ID", "Feedback"];
