@@ -61,7 +61,7 @@ const FeedbackList = ({ feedbacks, onFeedbackUpdated, searchTerm }) => {
                 alert('Feedback updated successfully!');
                 onFeedbackUpdated();
             } catch (error) {
-                console.error('Error updating feedback:', error);
+                console.error('Oops! Something went wrong while updating:', error);
             }
         }
     };
