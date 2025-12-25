@@ -1,0 +1,312 @@
+/* Container */
+.category-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(232, 245, 233, 0.9), rgba(200, 230, 201, 0.9)), /* Semi-transparent gradient */
+      url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80") no-repeat center center fixed; /* Background image */
+    background-size: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+    position: relative;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  .navbar button {
+    padding: 8px 16px;
+    background: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar button:hover {
+    background: #01579b;
+    transform: translateY(-2px);
+  }
+  
+  /* Title */
+  h1 {
+    font-size: 2.2rem;
+    color: #2e7d32;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  /* Form */
+  .category-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .category-form input,
+  .category-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: #fff; /* Ensure inputs are fully opaque */
+  }
+  
+  .category-form input:focus,
+  .category-form textarea:focus {
+    border-color: #2e7d32;
+    outline: none;
+  }
+  
+  .category-form textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .category-form button {
+    padding: 12px;
+    background: linear-gradient(45deg, #4caf50, #388e3c);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .category-form button:hover:not(:disabled) {
+    background: linear-gradient(45deg, #388e3c, #2e7d32);
+    transform: translateY(-2px);
+  }
+  
+  .category-form button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Controls (Search and PDF Button) */
+  .controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .search-input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    transition: border-color 0.3s ease;
+    background: #fff; /* Ensure search input is fully opaque */
+  }
+  
+  .search-input:focus {
+    border-color: #2e7d32;
+    outline: none;
+  }
+  
+  .pdf-button {
+    padding: 12px 20px;
+    background: linear-gradient(45deg, #0288d1, #0277bd);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .pdf-button:hover:not(:disabled) {
+    background: linear-gradient(45deg, #0277bd, #01579b);
+    transform: translateY(-2px);
+  }
+  
+  .pdf-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Loader */
+  .loader {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #2e7d32;
+    animation: pulse 1.5s infinite;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 20px auto;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  /* No Categories */
+  .no-categories {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #666;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Table */
+  .category-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.95); /* Slightly more opaque for readability */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-table th,
+  .category-table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .category-table th {
+    background: #2e7d32;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .category-table tr:nth-child(even) {
+    background: rgba(249, 249, 249, 0.9);
+  }
+  
+  .category-table tr:hover {
+    background: rgba(232, 245, 233, 0.9);
+  }
+  
+  /* Action Buttons */
+  .category-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .category-buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .category-buttons button:first-child {
+    background: #0288d1;
+    color: white;
+  }
+  
+  .category-buttons button:first-child:hover {
+    background: #01579b;
+    transform: translateY(-2px);
+  }
+  
+  .category-buttons button:last-child {
+    background: #d32f2f;
+    color: white;
+  }
+  
+  .category-buttons button:last-child:hover {
+    background: #b71c1c;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .category-container {
+      margin: 20px 10px;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    .controls {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .search-input {
+      max-width: 100%;
+    }
+  
+    .category-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+    .category-table th,
+    .category-table td {
+      min-width: 100px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .category-form {
+      max-width: 100%;
+    }
+  
+    .pdf-button {
+      width: 100%;
+      max-width: 200px;
+    }
+  
+    .category-buttons {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .category-buttons button {
+      width: 100%;
+    }
+  }
